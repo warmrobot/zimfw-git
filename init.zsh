@@ -17,9 +17,6 @@ _git_log_brief_format='%C(yellow)%h%C(reset) %s%n%C(bold blue)(%ar by %an)%C(aut
 # Aliases
 #
 
-# Git
-alias g='git'
-
 # Branch (b)
 alias gb='git branch'
 alias gbc='git checkout -b'
