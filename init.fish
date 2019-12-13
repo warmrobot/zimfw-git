@@ -8,10 +8,10 @@
 
 # Log colour scheme has yellow commit hash, bold blue author, cyan date, auto ref names
 # See https://git-scm.com/docs/pretty-formats
-_git_log_medium_format='%C(bold)Commit:%C(reset) %C(yellow)%H%C(auto)%d%n%C(bold)Author:%C(reset) %C(bold blue)%an <%ae>%n%C(bold)Date:%C(reset)   %C(cyan)%ai (%ar)%C(reset)%n%+B'
-_git_log_oneline_format='%C(yellow)%h%C(reset) %s%C(auto)%d%C(reset)'
-_git_log_fullgraph_format='%C(yellow)%h%C(reset) %<|(60,trunc)%s %C(bold blue)<%an> %C(reset)%C(cyan)(%ar)%C(auto)%d%C(reset)%n'
-_git_log_brief_format='%C(yellow)%h%C(reset) %s%n%C(bold blue)(%ar by %an)%C(auto)%d%C(reset)%n'
+set _git_log_medium_format '%C(bold)Commit:%C(reset) %C(yellow)%H%C(auto)%d%n%C(bold)Author:%C(reset) %C(bold blue)%an <%ae>%n%C(bold)Date:%C(reset)   %C(cyan)%ai (%ar)%C(reset)%n%+B'
+set _git_log_oneline_format '%C(yellow)%h%C(reset) %s%C(auto)%d%C(reset)'
+set _git_log_fullgraph_format '%C(yellow)%h%C(reset) %<|(60,trunc)%s %C(bold blue)<%an> %C(reset)%C(cyan)(%ar)%C(auto)%d%C(reset)%n'
+set _git_log_brief_format '%C(yellow)%h%C(reset) %s%n%C(bold blue)(%ar by %an)%C(auto)%d%C(reset)%n'
 
 #
 # Aliases
@@ -41,19 +41,19 @@ alias gcp='git cherry-pick --ff'
 alias gcP='git cherry-pick --no-commit'
 alias gcr='git revert'
 alias gcR='git reset "HEAD^"'
-alias gcs='git show --pretty=format:"${_git_log_medium_format}"'
+alias gcs='git show --pretty=format:"{_git_log_medium_format}"'
 alias gcl='git-commit-lost'
 alias gcS='git commit -S'
 alias gpS='git show --pretty=short --show-signature'
 
 # Conflict (C)
 alias gCl='git diff --diff-filter=U --name-only --no-pager'
-alias gCa='git add $(gCl)'
-alias gCe='git mergetool $(gCl)'
+alias gCa='git add (gCl)'
+alias gCe='git mergetool (gCl)'
 alias gCo='git checkout --ours --'
-alias gCO='gCo $(gCl)'
+alias gCO='gCo (gCl)'
 alias gCt='git checkout --theirs --'
-alias gCT='gCt $(gCl)'
+alias gCT='gCt (gCl)'
 
 # Data (d)
 alias gd='git ls-files'
@@ -91,15 +91,15 @@ alias gix='git rm --cached -r'
 alias giX='git rm --cached -rf'
 
 # Log (l)
-alias gl='git log --topo-order --pretty=format:"${_git_log_medium_format}"'
-alias gls='git log --topo-order --stat --pretty=format:"${_git_log_medium_format}"'
-alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:"${_git_log_medium_format}"'
-alias glo='git log --topo-order --pretty=format:"${_git_log_oneline_format}"'
-alias glg='git log --topo-order --all --graph --pretty=format:"${_git_log_oneline_format}%n"'
-alias glG='git log --topo-order --all --graph --pretty=format:"${_git_log_fullgraph_format}"'
-alias glb='git log --topo-order --pretty=format:"${_git_log_brief_format}"'
+alias gl='git log --topo-order --pretty=format:"{_git_log_medium_format}"'
+alias gls='git log --topo-order --stat --pretty=format:"{_git_log_medium_format}"'
+alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:"{_git_log_medium_format}"'
+alias glo='git log --topo-order --pretty=format:"{_git_log_oneline_format}"'
+alias glg='git log --topo-order --all --graph --pretty=format:"{_git_log_oneline_format}%n"'
+alias glG='git log --topo-order --all --graph --pretty=format:"{_git_log_fullgraph_format}"'
+alias glb='git log --topo-order --pretty=format:"{_git_log_brief_format}"'
 alias glc='git shortlog --summary --numbered'
-alias glS='git log --topo-order --show-signature --pretty=format:"${_git_log_medium_format}"'
+alias glS='git log --topo-order --show-signature --pretty=format:"{_git_log_medium_format}"'
 
 # Merge (m)
 alias gm='git merge'
@@ -114,8 +114,8 @@ alias gpf='git push --force'
 alias gpa='git push --all'
 alias gpA='git push --all && git push --tags'
 alias gpt='git push --tags'
-alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
-alias gpp='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
+alias gpc='git push --set-upstream origin "(git-branch-current 2> /dev/null)"'
+alias gpp='git pull origin "(git-branch-current 2> /dev/null)" && git push origin "(git-branch-current 2> /dev/null)"'
 
 # Rebase (r)
 alias gr='git rebase'
@@ -180,4 +180,4 @@ alias gwx='git rm -r'
 alias gwX='git rm -rf'
 
 # Misc
-alias g..='cd "$(git-root || print .)"'
+alias g..='cd "(git-root || print .)"'
