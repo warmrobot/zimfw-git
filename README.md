@@ -3,7 +3,7 @@ Git
 
 ## Установка
 
-`cp git.fish ~/.config/fish/conf.d`
+`curl https://raw.githubusercontent.com/warmrobot/zimfw-git/master/git.fish -o ~/.config/fish/conf.d/git.fish`
 
 Provides nice git aliases and functions.
 
