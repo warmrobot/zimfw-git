@@ -1,6 +1,10 @@
 Git
 ===
 
+## Установка
+
+`cp git.fish ~/.config/fish/conf.d`
+
 Provides nice git aliases and functions.
 
 Many thanks to [Sorin Ionescu](https://github.com/sorin-ionescu) for the

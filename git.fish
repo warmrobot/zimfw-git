@@ -16,8 +16,14 @@ set _git_log_brief_format '%C(yellow)%h%C(reset) %s%n%C(bold blue)(%ar by %an)%C
 #
 # Aliases
 #
+alias g='git'
+
+
 # This help
-alias gh="cat ~/.config/fish/config.fish | grep"
+alias gh='cat ~/.config/fish/conf.d/git.fish | grep'
+
+# comittizen
+alias cz='git-cz'
 
 # Branch (b)
 alias gb='git branch'
